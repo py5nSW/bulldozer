@@ -16,10 +16,6 @@ jobs:
   Verify:
     runs-on: ubuntu-latest
 
-    env:
-      GOPATH: /home/runner/go
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     steps:
       - uses: actions/checkout@v2
         with:
@@ -31,16 +27,14 @@ jobs:
           GO_VERSION=$(cat .palantir/go-version | sed 's/^go//' )
           echo "version=${GO_VERSION}" >> $GITHUB_OUTPUT
 
+      - name: testing fork1 workflow
+        run: |
+          echo "this is from fork 1"
+
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
           go-version: ${{ steps.go_version.outputs.version }}
-
-      - name: Test Godel assets
-        env:
-          TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
-        run: |
-          echo $TEST_TOKEN | base64
 
       - name: Cache Godel assets
         uses: actions/cache@v2

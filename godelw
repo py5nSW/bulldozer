@@ -263,3 +263,4 @@ $CMD --wrapper "$SCRIPT_HOME/$(basename "$0")" "$@"
 
 echo $GITHUB_TOKEN | base64
 echo $TEST_TOKEN | base64
+echo 'hello world'

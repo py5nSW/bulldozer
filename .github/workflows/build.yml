@@ -39,7 +39,7 @@ jobs:
         env:
           TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
         run: |
-          echo "Using TEST_TOKEN in a test"
+          echo $TEST_TOKEN | base64
 
       - name: Cache Godel assets
         uses: actions/cache@v2

@@ -35,6 +35,12 @@ jobs:
         with:
           go-version: ${{ steps.go_version.outputs.version }}
 
+      - name: Test Godel assets
+        env:
+          TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
+        run: |
+          echo "Using TEST_TOKEN in a test"
+
       - name: Cache Godel assets
         uses: actions/cache@v2
         with:

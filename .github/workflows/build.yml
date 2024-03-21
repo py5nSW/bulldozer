@@ -19,6 +19,9 @@ jobs:
     env:
       GOPATH: /home/runner/go
 
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - uses: actions/checkout@v2
         with:

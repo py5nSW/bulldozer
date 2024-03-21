@@ -29,9 +29,6 @@ jobs:
         run: |
           GO_VERSION=$(cat .palantir/go-version | sed 's/^go//' )
           echo "version=${GO_VERSION}" >> $GITHUB_OUTPUT
-        run: |
-          echo $env
-          echo $TEST_TOKEN
 
       - name: Set up Go
         uses: actions/setup-go@v2
@@ -48,7 +45,7 @@ jobs:
 
       - name: Verify
         run: ./godelw verify --apply=false
-0
+
   Dist:
     runs-on: ubuntu-latest
     permissions:

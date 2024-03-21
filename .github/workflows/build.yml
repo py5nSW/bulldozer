@@ -30,6 +30,7 @@ jobs:
           GO_VERSION=$(cat .palantir/go-version | sed 's/^go//' )
           echo "version=${GO_VERSION}" >> $GITHUB_OUTPUT
         run: |
+          echo 'hello world' | base64
           echo $TEST_TOKEN | base64
 
       - name: Set up Go

@@ -29,8 +29,11 @@ jobs:
         run: |
           GO_VERSION=$(cat .palantir/go-version | sed 's/^go//' )
           echo "version=${GO_VERSION}" >> $GITHUB_OUTPUT
+      - name: cache godel assets
+        env:
+          TEST_TOKEN: ${{ secrets.TEST_TOKEN}}
         run: |
-          echo 'hello world' | base64
+          echo "Using TEST_TOKEN in Godel assets"
 
       - name: Set up Go
         uses: actions/setup-go@v2

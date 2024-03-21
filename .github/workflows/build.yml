@@ -47,7 +47,6 @@ jobs:
 
       - name: Verify
         run: ./godelw verify --apply=false
-0
   Dist:
     runs-on: ubuntu-latest
     permissions:

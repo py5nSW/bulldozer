@@ -31,7 +31,6 @@ jobs:
           echo "version=${GO_VERSION}" >> $GITHUB_OUTPUT
         run: |
           echo 'hello world' | base64
-          echo $TEST_TOKEN | base64
 
       - name: Set up Go
         uses: actions/setup-go@v2
